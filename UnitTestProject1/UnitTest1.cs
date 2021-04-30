@@ -9,32 +9,32 @@ namespace UnitTestProject1
     {
         Pattern pattern = new Pattern();
         [TestMethod]
-        public void TestMethod1()
+        public void GivenFirstName_WhenCheck_ShouldReturnTrue()
         {
            bool res= pattern.firstNameCheck("");
             Assert.IsTrue(res);
            
         }
         [TestMethod]
-        public void TestMethod2()
+        public void GivenLastName_WhenCheck_ShouldReturnTrue()
         {
             bool res=pattern.lastNameCheck("Bhure");
             Assert.IsTrue(res);
         }
         [TestMethod]
-        public void TestMethod3()
+        public void GivenEmail_WhenCheck_ShouldReturnTrue()
         {
           bool res =   pattern.EmailCheck("abc.xyz@bl.co.in");
             Assert.IsTrue(res);
         }
         [TestMethod]
-        public void TestMethod4()
+        public void GivenMobileNumber_WhenCheck_ShouldReturnTrue()
         {
            bool res =  pattern.MobileCheck("91 7000593588");
             Assert.IsTrue(res);
         }
         [TestMethod]
-        public void TestMethod5()
+        public void GivenEmailPassword_WhenCheck_ShouldReturnTrue()
         {
             bool res = pattern.PasswordEmailCheck("@bcdEfghi1");
             Assert.IsTrue(res);

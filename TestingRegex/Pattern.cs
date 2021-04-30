@@ -9,11 +9,11 @@ namespace UserRegestrationRegex
     public class Pattern
     {
 
-        private const string firstNameRegex = "^[A-Z][a-zA-Z]{2,}$";
-        private string lastNameRegex = "^[A-Z][a-zA-Z]{2,}$";
-        private string emailRegex = "^[a-zA-Z]{3}[.]([a-zA-z]{3})[@][a-zA-Z]{2}[.][a-zA-Z]{2}[.]([a-zA-Z]{2})";
-        private string mobileRegex = "^[1-9]{2,2}[ ][0-9]{10}$";
-        private string passwordEmailRegex = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
+        private const string FIRST_NAME_REGEX = "^[A-Z][a-zA-Z]{2,}$";
+        private const string LAST_NAME_REGEX = "^[A-Z][a-zA-Z]{2,}$";
+        private const string EMAIL_REGEX = "^[a-zA-Z]{3}[.]([a-zA-z]{3})[@][a-zA-Z]{2}[.][a-zA-Z]{2}[.]([a-zA-Z]{2})";
+        private const string MOBILE_REGEX = "^[1-9]{2,2}[ ][0-9]{10}$";
+        private const string PASSWORD_EMAIL_REGEX = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
       
         public bool firstNameCheck(string input)
         {
@@ -23,7 +23,7 @@ namespace UserRegestrationRegex
             }
             else
             {
-                return Regex.IsMatch(input, firstNameRegex);
+                return Regex.IsMatch(input, FIRST_NAME_REGEX);
             }
         }
         public bool lastNameCheck(string input)
@@ -34,7 +34,7 @@ namespace UserRegestrationRegex
             }
             else
             {
-                return Regex.IsMatch(input, lastNameRegex);
+                return Regex.IsMatch(input, LAST_NAME_REGEX);
             }
         }
         public bool EmailCheck(string input)
@@ -45,7 +45,7 @@ namespace UserRegestrationRegex
             }
             else
             {
-                return Regex.IsMatch(input, emailRegex);
+                return Regex.IsMatch(input, EMAIL_REGEX);
             }
         }
         public bool MobileCheck(string input)
@@ -56,7 +56,7 @@ namespace UserRegestrationRegex
             }
             else
             {
-                return Regex.IsMatch(input, mobileRegex);
+                return Regex.IsMatch(input, MOBILE_REGEX);
             }
         }
         public bool PasswordEmailCheck(string input)
@@ -67,7 +67,7 @@ namespace UserRegestrationRegex
             }
             else
             {
-                return Regex.IsMatch(input, passwordEmailRegex);
+                return Regex.IsMatch(input, PASSWORD_EMAIL_REGEX);
             }
         }
     }
