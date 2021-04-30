@@ -1,4 +1,5 @@
 ﻿using System;
+using TestingRegex;
 
 namespace UserRegestrationRegex
 {
@@ -18,6 +19,9 @@ namespace UserRegestrationRegex
                 Console.WriteLine("Mobile " + mobile);
                 bool password = pattern.PasswordEmailCheck("abcdefghiA@1");
                 Console.WriteLine("Password " + password);
+            //Reflection
+                Console.WriteLine("Welcome to Reflection Test");
+                Reflection.ReflectionTest();
                 Console.ReadKey();           
         }
     }
