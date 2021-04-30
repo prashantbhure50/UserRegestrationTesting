@@ -9,7 +9,7 @@ namespace UserRegestrationRegex
     public class Pattern
     {
 
-        private string firstNameRegex = "^[A-Z][a-zA-Z]{2,}$";
+        private const string firstNameRegex = "^[A-Z][a-zA-Z]{2,}$";
         private string lastNameRegex = "^[A-Z][a-zA-Z]{2,}$";
         private string emailRegex = "^[a-zA-Z]{3}[.]([a-zA-z]{3})[@][a-zA-Z]{2}[.][a-zA-Z]{2}[.]([a-zA-Z]{2})";
         private string mobileRegex = "^[1-9]{2,2}[ ][0-9]{10}$";
