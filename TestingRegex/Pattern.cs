@@ -15,59 +15,59 @@ namespace UserRegestrationRegex
         private const string MOBILE_REGEX = "^[1-9]{2,2}[ ][0-9]{10}$";
         private const string PASSWORD_EMAIL_REGEX = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
       
-        public bool firstNameCheck(string input)
+        public bool firstNameCheck(string firstName)
         {
-            if (input == "")
+            if (firstName == "")
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
             else
             {
-                return Regex.IsMatch(input, FIRST_NAME_REGEX);
+                return Regex.IsMatch(firstName, FIRST_NAME_REGEX);
             }
         }
-        public bool lastNameCheck(string input)
+        public bool lastNameCheck(string lastName)
         {
-            if (input == "")
+            if (lastName == "")
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
             else
             {
-                return Regex.IsMatch(input, LAST_NAME_REGEX);
+                return Regex.IsMatch(lastName, LAST_NAME_REGEX);
             }
         }
-        public bool EmailCheck(string input)
+        public bool EmailCheck(string email)
         {
-            if (input == "")
+            if (email == "")
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
             else
             {
-                return Regex.IsMatch(input, EMAIL_REGEX);
+                return Regex.IsMatch(email, EMAIL_REGEX);
             }
         }
-        public bool MobileCheck(string input)
+        public bool MobileCheck(string mobileNo)
         {
-            if (input == "")
+            if (mobileNo == "")
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
             else
             {
-                return Regex.IsMatch(input, MOBILE_REGEX);
+                return Regex.IsMatch(mobileNo, MOBILE_REGEX);
             }
         }
-        public bool PasswordEmailCheck(string input)
+        public bool PasswordEmailCheck(string emailPassword)
         {
-            if (input == "")
+            if (emailPassword == "")
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
             else
             {
-                return Regex.IsMatch(input, PASSWORD_EMAIL_REGEX);
+                return Regex.IsMatch(emailPassword, PASSWORD_EMAIL_REGEX);
             }
         }
     }
