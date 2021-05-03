@@ -17,7 +17,7 @@ namespace UserRegestrationRegex
       
         public bool firstNameCheck(string firstName)
         {
-            if (firstName == "")
+            if (firstName == string.Empty)
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
@@ -28,7 +28,7 @@ namespace UserRegestrationRegex
         }
         public bool lastNameCheck(string lastName)
         {
-            if (lastName == "")
+            if (lastName == string.Empty)
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
@@ -39,7 +39,7 @@ namespace UserRegestrationRegex
         }
         public bool EmailCheck(string email)
         {
-            if (email == "")
+            if (email == string.Empty)
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
@@ -50,7 +50,7 @@ namespace UserRegestrationRegex
         }
         public bool MobileCheck(string mobileNo)
         {
-            if (mobileNo == "")
+            if (mobileNo == string.Empty)
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
@@ -61,7 +61,7 @@ namespace UserRegestrationRegex
         }
         public bool PasswordEmailCheck(string emailPassword)
         {
-            if (emailPassword == "")
+            if (emailPassword == string.Empty)
             {
                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
             }
