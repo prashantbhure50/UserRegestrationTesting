@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using TestingRegex;
 
 namespace UserRegestrationRegex
@@ -17,10 +19,27 @@ namespace UserRegestrationRegex
                 Console.WriteLine("Email " + email);
                 bool mobile = pattern.MobileCheck("91 9876543210");
                 Console.WriteLine("Mobile " + mobile);
-                bool password = pattern.PasswordEmailCheck("");
-                Console.WriteLine("Password " + password);           
-                //Reflection
-                Console.WriteLine("Welcome to Reflection Test");
+                bool password = pattern.PasswordEmailCheck("Alokbhure1@");
+                Console.WriteLine("Password " + password);
+
+            //multiple Email
+            ArrayList multipleEmail = new ArrayList();
+            multipleEmail.Add("abc@yahoo.com");
+            multipleEmail.Add("abc-100@yahoo.com");
+            multipleEmail.Add("abc.100@yahoo.com");
+            multipleEmail.Add("abc@1.com");
+            multipleEmail.Add("abc-100@abc.net");
+            multipleEmail.Add("abc@gmal.com.co");
+            multipleEmail.Add("abc+100@gmail.com");
+            foreach(string elements in multipleEmail)
+            {
+                bool checkEmail = pattern.EmailCheck(elements);
+                Console.WriteLine("Multiple Email Check" + checkEmail);
+            }
+
+
+            //Reflection
+            Console.WriteLine("Welcome to Reflection Test");
                 Reflection.ReflectionTest();
                 Console.ReadKey();           
         }
