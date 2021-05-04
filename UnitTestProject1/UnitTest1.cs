@@ -11,7 +11,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void GivenFirstName_WhenCheck_ShouldReturnTrue()
         {
-           bool res= pattern.firstNameCheck("");
+           bool res= pattern.firstNameCheck("Prashant");
             Assert.IsTrue(res);
            
         }
@@ -37,7 +37,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void GivenEmailPassword_WhenCheck_ShouldReturnTrue()
         {
-            bool res = pattern.PasswordEmailCheck("@bcdEfghi1");
+            bool res = pattern.PasswordEmailCheck("");
             Assert.IsTrue(res);
         }
         
