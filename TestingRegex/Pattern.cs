@@ -14,19 +14,20 @@ namespace UserRegestrationRegex
         private const string EMAIL_REGEX = "^[a-zA-Z]{3}[.]([a-zA-z]{3})[@][a-zA-Z]{2}[.][a-zA-Z]{2}[.]([a-zA-Z]{2})";
         private const string MOBILE_REGEX = "^[1-9]{2,2}[ ][0-9]{10}$";
         private const string PASSWORD_EMAIL_REGEX = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
-      
-        public bool firstNameCheck(string firstName)
-        {
-            if (firstName == string.Empty)
-            {
-                throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
-            }
-            else
-            {
-                return Regex.IsMatch(firstName, FIRST_NAME_REGEX);
-            }
-        }
-        public bool lastNameCheck(string lastName)
+
+
+        public Func<string, bool> firstNameCheck = (firstName) =>
+         {
+             if (firstName == string.Empty)
+             {
+                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
+             }
+             else
+             {
+                 return Regex.IsMatch(firstName, FIRST_NAME_REGEX);
+             }
+         };
+        public Func<string,bool> lastNameCheck =(lastName) =>
         {
             if (lastName == string.Empty)
             {
@@ -36,19 +37,19 @@ namespace UserRegestrationRegex
             {
                 return Regex.IsMatch(lastName, LAST_NAME_REGEX);
             }
-        }
-        public bool EmailCheck(string email)
-        {
-            if (email == string.Empty)
-            {
-                throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
-            }
-            else
-            {
-                return Regex.IsMatch(email, EMAIL_REGEX);
-            }
-        }
-        public bool MobileCheck(string mobileNo)
+        };
+        public Func<string, bool> EmailCheck = (email) =>
+         {
+             if (email == string.Empty)
+             {
+                 throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Null Value");
+             }
+             else
+             {
+                 return Regex.IsMatch(email, EMAIL_REGEX);
+             }
+         };
+        public Func<string, bool> MobileCheck = (mobileNo) =>
         {
             if (mobileNo == string.Empty)
             {
@@ -58,8 +59,8 @@ namespace UserRegestrationRegex
             {
                 return Regex.IsMatch(mobileNo, MOBILE_REGEX);
             }
-        }
-        public bool PasswordEmailCheck(string emailPassword)
+        };
+        public Func<string, bool> PasswordEmailCheck = (emailPassword)=>
         {
             if (emailPassword == string.Empty)
             {
@@ -69,6 +70,6 @@ namespace UserRegestrationRegex
             {
                 return Regex.IsMatch(emailPassword, PASSWORD_EMAIL_REGEX);
             }
-        }
+        };
     }
 }
